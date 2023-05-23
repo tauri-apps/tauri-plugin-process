@@ -1,4 +1,13 @@
 /**
+ * Perform operations on the current process.
+ * @module
+ */
+declare global {
+    interface Window {
+        __TAURI_INVOKE__: <T>(cmd: string, args?: unknown) => Promise<T>;
+    }
+}
+/**
  * Exits immediately with the given `exitCode`.
  * @example
  * ```typescript
