@@ -18,7 +18,7 @@ declare global {
  * @param code The exit code to use.
  * @returns A promise indicating the success or failure of the operation.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 declare function exit(code?: number): Promise<void>;
 /**
@@ -31,7 +31,7 @@ declare function exit(code?: number): Promise<void>;
  *
  * @returns A promise indicating the success or failure of the operation.
  *
- * @since 1.0.0
+ * @since 2.0.0
  */
 declare function relaunch(): Promise<void>;
 export { exit, relaunch };
