@@ -1,6 +1,12 @@
+import { invoke } from '@tauri-apps/api/primitives';
+
 // Copyright 2019-2023 Tauri Programme within The Commons Conservancy
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
+/**
+ * Perform operations on the current process.
+ * @module
+ */
 /**
  * Exits immediately with the given `exitCode`.
  * @example
@@ -15,7 +21,7 @@
  * @since 2.0.0
  */
 async function exit(code = 0) {
-    return window.__TAURI_INVOKE__("plugin:process|exit", { code });
+    return invoke("plugin:process|exit", { code });
 }
 /**
  * Exits the current instance of the app then relaunches it.
@@ -30,7 +36,7 @@ async function exit(code = 0) {
  * @since 2.0.0
  */
 async function relaunch() {
-    return window.__TAURI_INVOKE__("plugin:process|restart");
+    return invoke("plugin:process|restart");
 }
 
 export { exit, relaunch };
