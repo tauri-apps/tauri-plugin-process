@@ -1,4 +1,6 @@
-import { invoke } from '@tauri-apps/api/primitives';
+'use strict';
+
+var primitives = require('@tauri-apps/api/primitives');
 
 // Copyright 2019-2023 Tauri Programme within The Commons Conservancy
 // SPDX-License-Identifier: Apache-2.0
@@ -21,7 +23,7 @@ import { invoke } from '@tauri-apps/api/primitives';
  * @since 2.0.0
  */
 async function exit(code = 0) {
-    return invoke("plugin:process|exit", { code });
+    return primitives.invoke("plugin:process|exit", { code });
 }
 /**
  * Exits the current instance of the app then relaunches it.
@@ -36,8 +38,8 @@ async function exit(code = 0) {
  * @since 2.0.0
  */
 async function relaunch() {
-    return invoke("plugin:process|restart");
+    return primitives.invoke("plugin:process|restart");
 }
 
-export { exit, relaunch };
-//# sourceMappingURL=index.mjs.map
+exports.exit = exit;
+exports.relaunch = relaunch;
